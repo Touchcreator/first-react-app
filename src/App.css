@@ -1,6 +1,7 @@
 html, body, #root {
   background-color: lightgray;
-  height: 100%;
+  height: 100vh;
+  margin: 0;
 }
 
 #main {
@@ -8,6 +9,7 @@ html, body, #root {
   flex-direction: row;
   flex-grow: 1;
   height: 100%;
+  margin: 0;
 }
 
 #sidebar {
@@ -18,15 +20,11 @@ html, body, #root {
   display: flex;
   flex-grow: .7;
   flex-direction: column;
-  height: 100%;
 }
 
 .section {
-  border: 5px solid black;
-}
-
-#main > * {
-  height: 100%;
+  border: 3px solid gray;
+  margin: 0;
 }
 
 #new-message {
