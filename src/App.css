@@ -1,0 +1,29 @@
+body, #root {
+  background-color: lightgray;
+}
+
+#root {
+  height: 100%
+}
+
+#main {
+  display: flex;
+  flex-direction: row;
+  height: 100%
+}
+
+#sidebar {
+  flex-grow: .45;
+}
+
+#other-side {
+  flex-grow: calc(1-.45);
+}
+
+.section {
+  border: 5px solid black;
+}
+
+#main > * {
+  height: 100%;
+}
