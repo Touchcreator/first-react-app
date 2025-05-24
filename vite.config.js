@@ -1,7 +1,13 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { loadEnv, defineConfig } from 'vite'
+import { ngrok } from 'vite-plugin-ngrok'
+const { NGROK_AUTH_TOKEN } = loadEnv('', process.cwd(), 'NGROK')
+import react from "@vitejs/plugin-react"
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    ngrok({
+      authtoken: NGROK_AUTH_TOKEN,
+    }),
+    react()
+  ],
 })

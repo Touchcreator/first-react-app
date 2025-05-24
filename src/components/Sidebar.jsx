@@ -1,6 +1,6 @@
 function Sidebar() {
     return (
-        <h1>Sidebar</h1>
+        <h2>Users</h2>
     )
 }
 

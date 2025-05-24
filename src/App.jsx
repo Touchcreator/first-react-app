@@ -4,6 +4,14 @@ import Sidebar from "./components/Sidebar"
 import "./App.css"
 
 function App() {
+  let username = localStorage.getItem("username")
+
+  while (!username) {
+    username = prompt("Select a username").trim();
+  }
+  localStorage.setItem("username", username)
+
+
   return (
     <>
       <div id="main">
