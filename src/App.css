@@ -1,23 +1,26 @@
-body, #root {
+body {
+  display: flex;
   background-color: lightgray;
 }
 
 #root {
-  height: 100%
+  flex-grow: 1;
+  display: flex;
 }
 
 #main {
   display: flex;
   flex-direction: row;
-  height: 100%
+  flex-grow: 1;
+  height: 100%;
 }
 
 #sidebar {
-  flex-grow: .45;
+  flex-grow: .3;
 }
 
 #other-side {
-  flex-grow: calc(1-.45);
+  flex-grow: .7;
 }
 
 .section {
