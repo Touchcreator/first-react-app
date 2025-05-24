@@ -2,10 +2,12 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 
-import firebaseConfig from "../secrets/firebaseSecrets.json";
+import firebaseConfig from "../../secrets/firebaseSecrets.json";
 
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { useState } from "react";
+
+firebaseConfig.apiKey = import.meta.env.VITE_FIREBASE_API
 
 firebase.initializeApp(firebaseConfig)
 
@@ -26,9 +28,15 @@ function NewMessage() {
         setMsgValue("");
     }
 
+    const inputKey = (event) => {
+        if (event.key === "Enter") {
+            sendMessage(msgValue)
+        }
+    }
+
     return (
         <>
-        <input id="yourmessage" value={msgValue} onChange={(e) => setMsgValue(e.target.value)}/>
+        <input id="yourmessage" value={msgValue} onChange={(e) => setMsgValue(e.target.value)} onKeyDown={inputKey}/>
         <input type="button" value="Send" id="send-btn" onClick={() => sendMessage(msgValue)}/>
         </>
     )

@@ -4,9 +4,11 @@ import ChatMessage from "./ChatMessage"
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 
-import firebaseConfig from "../secrets/firebaseSecrets.json";
+import firebaseConfig from "../../secrets/firebaseSecrets.json";
 
 import { useCollectionData } from "react-firebase-hooks/firestore";
+
+firebaseConfig.apiKey = import.meta.env.VITE_FIREBASE_API
 
 firebase.initializeApp(firebaseConfig)
 

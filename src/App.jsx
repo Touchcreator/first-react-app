@@ -1,21 +1,23 @@
 import Messages from "./components/Messages"
 import NewMessage from "./components/NewMessage"
-import Sidebar from "./components/Sidebar"
 import "./App.css"
+import { useEffect, useState } from "react"
 
 function App() {
-  let username = localStorage.getItem("username")
+  const [username, setUsername] = useState(localStorage.getItem("username"))
 
-  while (!username) {
-    username = prompt("Select a username").trim();
-  }
-  localStorage.setItem("username", username)
+  useEffect(() => {
+    if (username === null) {
+      const thing = prompt("Select a username")
+      setUsername(thing)
+      localStorage.setItem("username", thing)
+    }
+  }, [])
 
 
   return (
     <>
       <div id="main">
-        <div id="sidebar" className="section"><Sidebar/></div>
         <div id="other-side" >
           <div id="messages" className="section"><Messages/></div>
           <div id="new-message" className="section"><NewMessage/></div>

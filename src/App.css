@@ -19,7 +19,7 @@ html, body, #root {
 
 #other-side {
   display: flex;
-  flex-grow: .7;
+  flex-grow: 1;
   flex-direction: column;
 }
 
@@ -29,15 +29,11 @@ html, body, #root {
 }
 
 #new-message {
-  flex-grow: 0.1;
+  flex-grow: 0.2;
 }
 
 #messages {
-  flex-grow: 0.9;
-}
-
-h2 {
-  padding-left: 5px
+  flex-grow: 0.8;
 }
 
 #yourmessage {
