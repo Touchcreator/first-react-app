@@ -26,4 +26,3 @@ dist-ssr
 # secret
 src/secrets/
 .env
-secrets/
